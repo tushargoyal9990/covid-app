@@ -1,0 +1,44 @@
+.tile-container{
+    padding: 10px;
+}
+
+.tile {
+    height: 150px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.confirmed {
+    color: red;
+}
+
+.bg-filled-confirmed {
+    background-color: rgb(248, 220, 228);
+}
+
+.active {
+    color: blue;
+}
+
+.bg-filled-active {
+    background-color: rgb(225, 228, 250);
+}
+
+.recovered {
+color: green;
+}
+
+.bg-filled-recovered {
+    background-color: rgb(214, 250, 214);
+}
+
+.deceased {
+    color: gray;
+}
+
+.bg-filled-deceased {
+    background-color: rgb(233, 231, 231);
+}
+
+
+

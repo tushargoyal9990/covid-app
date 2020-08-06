@@ -1,0 +1,12 @@
+.covid-icon {
+    color: red;
+}
+
+.heading {
+    color: rgb(85, 83, 83);
+    font-size: 2em;
+    font-weight: bold;
+    font-family: monospace;
+    text-align: center;
+    margin: 30px;
+}
