@@ -5,7 +5,7 @@ class Heading extends Component {
     render() {
         return (
             <div className="heading">
-                <i class="fas fa-virus fa-pulse covid-icon"></i>    COVID-19 INDIA
+                <i className="fas fa-virus fa-pulse covid-icon"></i>    COVID-19 INDIA
             </div>
         );
     }

@@ -6,10 +6,32 @@
     height: 150px;
     text-align: center;
     font-weight: bold;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.delta {
+    font-size: medium;
+}
+
+.tile-content {
+    font-size: xx-large;
+    margin: 20px;
+}
+
+.time-label {
+    text-align: right;
+    font-size: small;
+}
+
+.label-color {
+    font-weight: bolder;
+    background-color: rgb(219, 194, 241);
+    color: blueviolet;
 }
 
 .confirmed {
-    color: red;
+    color: rgb(247, 4, 4);
 }
 
 .bg-filled-confirmed {
@@ -17,7 +39,7 @@
 }
 
 .active {
-    color: blue;
+    color: rgb(65, 121, 241);
 }
 
 .bg-filled-active {
@@ -25,7 +47,7 @@
 }
 
 .recovered {
-color: green;
+color: rgb(16, 170, 55);
 }
 
 .bg-filled-recovered {
