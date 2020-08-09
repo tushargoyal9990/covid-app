@@ -88,7 +88,7 @@ class CardSection extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-md-3 col-sm-6 tile-container">
-                        <div className={"tile confirmed " + `${this.state.showConfirmed ? "bg-filled-confirmed" : ""}`} onMouseEnter={this.toggleConfirmed} onMouseLeave={this.toggleConfirmed}>
+                        <div className={"tile confirmed ".concat(`${this.state.showConfirmed ? "bg-filled-confirmed" : ""}`)} onMouseEnter={this.toggleConfirmed} onMouseLeave={this.toggleConfirmed}>
                             CONFIRMED 
                             <div className="tile-content">
                                 <div className="delta">+{this.state.deltaConfirmed}</div>
@@ -97,7 +97,7 @@ class CardSection extends Component {
                         </div>
                     </div>
                     <div className="col-md-3 col-sm-6 tile-container">
-                        <div className={"tile active " + `${this.state.showActive ? "bg-filled-active" : ""}`} onMouseEnter={this.toggleActive} onMouseLeave={this.toggleActive}>
+                        <div className={"tile active ".concat(`${this.state.showActive ? "bg-filled-active" : ""}`)} onMouseEnter={this.toggleActive} onMouseLeave={this.toggleActive}>
                             ACTIVE 
                             <div className="tile-content">
                                 <div className="delta">+{this.state.deltaActive}</div>
@@ -106,7 +106,7 @@ class CardSection extends Component {
                         </div>
                     </div>
                     <div className="col-md-3 col-sm-6 tile-container">
-                        <div className={"tile recovered " + `${this.state.showRecovered ? "bg-filled-recovered" : ""}`} onMouseEnter={this.toggleRecovered} onMouseLeave={this.toggleRecovered}>
+                        <div className={"tile recovered ".concat(`${this.state.showRecovered ? "bg-filled-recovered" : ""}`)} onMouseEnter={this.toggleRecovered} onMouseLeave={this.toggleRecovered}>
                             RECOVERED 
                             <div className="tile-content">
                                 <div className="delta">+{this.state.deltaRecovered}</div>
@@ -115,7 +115,7 @@ class CardSection extends Component {
                         </div>
                     </div>
                     <div className="col-md-3 col-sm-6 tile-container">
-                        <div className={"tile deceased " + `${this.state.showDeceased ? "bg-filled-deceased" : ""}`} onMouseEnter={this.toggleDeceased} onMouseLeave={this.toggleDeceased}>
+                        <div className={"tile deceased ".concat(`${this.state.showDeceased ? "bg-filled-deceased" : ""}`)} onMouseEnter={this.toggleDeceased} onMouseLeave={this.toggleDeceased}>
                             DECEASED 
                             <div className="tile-content">
                                 <div className="delta">+{this.state.deltaDeceased}</div>

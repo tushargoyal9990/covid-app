@@ -12,7 +12,7 @@ class Main extends Component {
                 <>
                     <Heading stateCode="INDIA"></Heading>
                     <CardSection stateCode="INDIA"></CardSection>
-                    <TableSection></TableSection>
+                    <TableSection stateCode="INDIA"></TableSection>
                 </>
             );
         }
@@ -26,6 +26,7 @@ class Main extends Component {
                 <>
                     <Heading stateCode={props.match.params.stateCode}></Heading>
                     <CardSection stateCode={props.match.params.stateCode}></CardSection>
+                    <TableSection stateCode={props.match.params.stateCode}></TableSection>
                 </>
             );
         }

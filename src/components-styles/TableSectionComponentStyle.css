@@ -1,0 +1,23 @@
+.margin-top {
+    margin-top: 20px;
+}
+
+.confirmed {
+    color: rgb(247, 4, 4);
+}
+
+.active {
+    color: rgb(65, 121, 241);
+}
+
+.recovered {
+    color: rgb(16, 170, 55);
+}
+
+.deceased {
+    color: gray;
+}
+
+.sort-icon {
+    color: rgb(68, 67, 67);
+}
