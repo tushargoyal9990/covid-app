@@ -50,7 +50,15 @@ class CardSection extends Component {
         axios
         .get(URL_NATIONAL_DAILY)
         .then(res => {
-            return res.data.statewise[0];
+            return res.data.statewise;
+        })
+        .then(data => {
+            for(var i = 0; i < data.length; i++) {
+                if(data[i]["statecode"] === this.props.stateCode) {
+                    return data[i];
+                }
+            }
+            return data[0];
         })
         .then(data => {
             const confirmed = data["confirmed"];
@@ -117,7 +125,7 @@ class CardSection extends Component {
                     </div>
                 </div>
                 <div className="time-label">
-                    <span className="label-color">&nbsp;<i class="fas fa-sync-alt"></i> Last Updated on {this.state.lastUpdated}&nbsp;</span>
+                    <span className="label-color">&nbsp;<i className="fas fa-sync-alt"></i> Last Updated on {this.state.lastUpdated}&nbsp;</span>
                 </div>
             </div>
         );
