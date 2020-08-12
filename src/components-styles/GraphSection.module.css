@@ -48,6 +48,17 @@
 
 .heading {
     margin-top: 20px;
-    color: rgb(100, 98, 98);
+    color: #646262;
     font-family: cursive;
+}
+
+.right{
+    float: right;
+}
+
+.label {
+    color: #646262;
+    font-family: cursive;
+    font-weight: bold;
+    margin-right: 10px;
 }
