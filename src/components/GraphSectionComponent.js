@@ -3,8 +3,9 @@ import axios from 'axios';
 import { URL_NATIONAL_DAILY, URL_STATES_DAILY } from '../assets/URL';
 import '../../node_modules/react-vis/dist/style.css';
 import styles from '../components-styles/GraphSection.module.css';
-import {FlexibleWidthXYPlot, LineMarkSeries, XAxis, YAxis, Hint} from 'react-vis';
-
+import {FlexibleWidthXYPlot, LineMarkSeries, XAxis, YAxis} from 'react-vis';
+import {Button, ButtonGroup} from 'reactstrap';
+ 
 class Graph extends Component{
     constructor(props) {
         super(props);
@@ -13,7 +14,7 @@ class Graph extends Component{
         };
     }
     render() {
-        const data = this.props.data;
+        const data = (this.props.selected === 0) ? this.props.data : (this.props.selected === 1) ? this.props.data.slice(this.props.data.length-90) : this.props.data.slice(this.props.data.length-30);
         const stroke = this.props.stroke;
         const strokeLight = this.props.strokeLight;
         return(
@@ -61,12 +62,18 @@ class GraphSection extends Component {
             hoverValueConfirmed: {},
             hoverValueActive: {},
             hoverValueRecovered: {},
-            hoverValueDeceased: {}
+            hoverValueDeceased: {},
+            selected: 0
         }
         this.handleHoverConfirmed = this.handleHoverConfirmed.bind(this);
         this.handleHoverActive = this.handleHoverActive.bind(this);
         this.handleHoverRecovered = this.handleHoverRecovered.bind(this);
         this.handleHoverDeceased = this.handleHoverDeceased.bind(this);
+        this.changeSelect = this.changeSelect.bind(this);
+    }
+
+    changeSelect(val) {
+        this.setState({selected: val});
     }
 
     handleHoverConfirmed(val) {
@@ -145,17 +152,22 @@ class GraphSection extends Component {
         return(
             <div className="container">
                 <h3 className={styles.heading}>Spread Trends</h3><hr></hr>
+                <ButtonGroup>
+                    <Button color="info" onClick={()=>this.changeSelect(0)} active={this.state.selected === 0}>Beginning</Button>
+                    <Button color="info" onClick={()=>this.changeSelect(1)} active={this.state.selected === 1}>3 Months</Button>
+                    <Button color="info" onClick={()=>this.changeSelect(2)} active={this.state.selected === 2}>1 Month</Button>
+                </ButtonGroup>
                 <div className="row">
                     <div className={`'col col-md-6 ' ${styles.outer}`}>
                         <div className={`${styles.bgFilledConfirmed}`}>
                             <h6 className={`${styles.confirmed} ${styles.textStyle}`}>Confirmed {this.state.hoverValueConfirmed.label ? this.state.hoverValueConfirmed.label : '--'} : {this.state.hoverValueConfirmed.y ? this.state.hoverValueConfirmed.y : '0'}</h6>
-                            <Graph data={this.state.dataConfirmed} stroke={'#f70404'} strokeLight={'#f8dce4'} changeHover={this.handleHoverConfirmed}></Graph>
+                            <Graph data={this.state.dataConfirmed} stroke={'#f70404'} strokeLight={'#f8dce4'} changeHover={this.handleHoverConfirmed} selected={this.state.selected}></Graph>
                         </div>
                     </div>
                     <div className={`'col col-md-6 ' ${styles.outer}`}>
                         <div className={`${styles.bgFilledActive}`}>
                             <h6 className={`${styles.active} ${styles.textStyle}`}>Active {this.state.hoverValueActive.label ? this.state.hoverValueActive.label : '--'} : {this.state.hoverValueActive.y ? this.state.hoverValueActive.y : '0'}</h6>
-                            <Graph data={this.state.dataActive} stroke={'#4179f1'} strokeLight={'#e1e4fa'} changeHover={this.handleHoverActive}></Graph>
+                            <Graph data={this.state.dataActive} stroke={'#4179f1'} strokeLight={'#e1e4fa'} changeHover={this.handleHoverActive} selected={this.state.selected}></Graph>
                         </div>
                     </div>
                 </div>
@@ -163,13 +175,13 @@ class GraphSection extends Component {
                     <div className={`'col col-md-6 ' ${styles.outer}`}>
                         <div className={`${styles.bgFilledRecovered}`}>
                             <h6 className={`${styles.recovered} ${styles.textStyle}`}>Recovered {this.state.hoverValueRecovered.label ? this.state.hoverValueRecovered.label : '--'} : {this.state.hoverValueRecovered.y ? this.state.hoverValueRecovered.y : '0'}</h6>
-                            <Graph data={this.state.dataRecovered} stroke={'#10aa37'} strokeLight={'#d6fad6'} changeHover={this.handleHoverRecovered}></Graph>
+                            <Graph data={this.state.dataRecovered} stroke={'#10aa37'} strokeLight={'#d6fad6'} changeHover={this.handleHoverRecovered} selected={this.state.selected}></Graph>
                         </div>
                     </div>
                     <div className={`'col col-md-6 ' ${styles.outer}`}>
                         <div className={`${styles.bgFilledDeceased}`}>
                             <h6 className={`${styles.deceased} ${styles.textStyle}`}>Deceased {this.state.hoverValueDeceased.label ? this.state.hoverValueDeceased.label : '--'} : {this.state.hoverValueDeceased.y ? this.state.hoverValueDeceased.y : '0'}</h6>
-                            <Graph data={this.state.dataDeceased} stroke={'#808080'} strokeLight={'#e9e7e7'} changeHover={this.handleHoverDeceased}></Graph>
+                            <Graph data={this.state.dataDeceased} stroke={'#808080'} strokeLight={'#e9e7e7'} changeHover={this.handleHoverDeceased} selected={this.state.selected}></Graph>
                         </div>
                     </div>
                 </div>
