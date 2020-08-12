@@ -7,10 +7,6 @@ class CardSection extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showConfirmed: false,
-            showActive: false,
-            showRecovered: false,
-            showDeceased: false,
             confirmed: 0,
             deltaConfirmed: 0,
             active: 0,
@@ -21,31 +17,8 @@ class CardSection extends Component {
             deltaDeceased: 0,
             lastUpdated: ''
         };
-        this.toggleConfirmed = this.toggleConfirmed.bind(this);
-        this.toggleActive = this.toggleActive.bind(this);
-        this.toggleRecovered = this.toggleRecovered.bind(this);
-        this.toggleDeceased = this.toggleDeceased.bind(this);
     }
-    toggleConfirmed() {
-        this.setState({
-            showConfirmed: !this.state.showConfirmed
-        });
-    }
-    toggleActive() {
-        this.setState({
-            showActive: !this.state.showActive
-        });
-    }
-    toggleRecovered() {
-        this.setState({
-            showRecovered: !this.state.showRecovered
-        });
-    }
-    toggleDeceased() {
-        this.setState({
-            showDeceased: !this.state.showDeceased
-        });
-    }
+
     componentDidMount() {
         axios
         .get(URL_NATIONAL_DAILY)
@@ -88,7 +61,7 @@ class CardSection extends Component {
             <div className="container">
                 <div className="row">
                     <div className={"col-md-3 col-sm-6 ".concat(`${styles.tileContainer}`)}>
-                        <div className={`${styles.tile} ${styles.confirmed} `.concat(`${this.state.showConfirmed ? `${styles.bgFilledConfirmed}` : ""}`)} onMouseEnter={this.toggleConfirmed} onMouseLeave={this.toggleConfirmed}>
+                        <div className={`${styles.tile} ${styles.confirmed}`}>
                             CONFIRMED 
                             <div className={styles.tileContent}>
                                 <div className={styles.delta}>+{this.state.deltaConfirmed}</div>
@@ -97,7 +70,7 @@ class CardSection extends Component {
                         </div>
                     </div>
                     <div className={"col-md-3 col-sm-6 ".concat(`${styles.tileContainer}`)}>
-                        <div className={`${styles.tile} ${styles.active} `.concat(`${this.state.showActive ? `${styles.bgFilledActive}` : ""}`)} onMouseEnter={this.toggleActive} onMouseLeave={this.toggleActive}>
+                        <div className={`${styles.tile} ${styles.active}`}>
                             ACTIVE 
                             <div className={styles.tileContent}>
                                 <div className={styles.delta}>+{this.state.deltaActive}</div>
@@ -106,7 +79,7 @@ class CardSection extends Component {
                         </div>
                     </div>
                     <div className={"col-md-3 col-sm-6 ".concat(`${styles.tileContainer}`)}>
-                        <div className={`${styles.tile} ${styles.recovered} `.concat(`${this.state.showRecovered ? `${styles.bgFilledRecovered}` : ""}`)} onMouseEnter={this.toggleRecovered} onMouseLeave={this.toggleRecovered}>
+                        <div className={`${styles.tile} ${styles.recovered}`}>
                             RECOVERED 
                             <div className={styles.tileContent}>
                                 <div className={styles.delta}>+{this.state.deltaRecovered}</div>
@@ -115,7 +88,7 @@ class CardSection extends Component {
                         </div>
                     </div>
                     <div className={"col-md-3 col-sm-6 ".concat(`${styles.tileContainer}`)}>
-                        <div className={`${styles.tile} ${styles.deceased} `.concat(`${this.state.showDeceased ? `${styles.bgFilledDeceased}` : ""}`)} onMouseEnter={this.toggleDeceased} onMouseLeave={this.toggleDeceased}>
+                        <div className={`${styles.tile} ${styles.deceased}`}>
                             DECEASED 
                             <div className={styles.tileContent}>
                                 <div className={styles.delta}>+{this.state.deltaDeceased}</div>

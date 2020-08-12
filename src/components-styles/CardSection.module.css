@@ -34,7 +34,7 @@
     color: #f70404;
 }
 
-.bgFilledConfirmed {
+.tile.confirmed:hover {
     background-color: #f8dce4;
 }
 
@@ -42,15 +42,15 @@
     color: #4179f1;
 }
 
-.bgFilledActive {
+.tile.active:hover {
     background-color: #e1e4fa;
 }
 
 .recovered {
-color: #10aa37;
+    color: #10aa37;
 }
 
-.bgFilledRecovered {
+.tile.recovered:hover {
     background-color: #d6fad6;
 }
 
@@ -58,7 +58,7 @@ color: #10aa37;
     color: #808080;
 }
 
-.bgFilledDeceased {
+.tile.deceased:hover {
     background-color: #e9e7e7;
 }
 

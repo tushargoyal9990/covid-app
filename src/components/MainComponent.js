@@ -4,7 +4,7 @@ import {CodeToState} from '../assets/StateCodes'
 import Heading from './HeadingComponent';
 import CardSection from './CardSectionComponent';
 import TableSection from './TableSectionComponent';
-import Graph from './GraphComponent';
+import GraphSection from './GraphSectionComponent';
 
 class Main extends Component {
     render() {
@@ -14,7 +14,7 @@ class Main extends Component {
                     <Heading stateCode="INDIA"></Heading>
                     <CardSection stateCode="INDIA"></CardSection>
                     <TableSection stateCode="INDIA"></TableSection>
-                    <Graph stateCode="INDIA"></Graph>
+                    <GraphSection stateCode="INDIA"></GraphSection>
                 </>
             );
         }
@@ -29,6 +29,7 @@ class Main extends Component {
                     <Heading stateCode={props.match.params.stateCode}></Heading>
                     <CardSection stateCode={props.match.params.stateCode}></CardSection>
                     <TableSection stateCode={props.match.params.stateCode}></TableSection>
+                    <GraphSection stateCode={props.match.params.stateCode}></GraphSection>
                 </>
             );
         }
