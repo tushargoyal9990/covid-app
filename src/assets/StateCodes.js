@@ -2,7 +2,7 @@ export const CodeToState = {
     "MH" : "MAHARASHTRA",
     "TN" : "TAMIL NADU",
     "DL" : "DELHI",
-    "KN" : "KARNATAKA",
+    "KA" : "KARNATAKA",
     "AP" : "ANDHRA PRADESH",
     "UP" : "UTTAR PRADESH",
     "GJ" : "GUJARAT",
@@ -41,7 +41,7 @@ export const CodeToStateNormal = {
     "MH" : "Maharashtra",
     "TN" : "Tamil Nadu",
     "DL" : "Delhi",
-    "KN" : "Karnataka",
+    "KA" : "Karnataka",
     "AP" : "Andhra Pradesh",
     "UP" : "Uttar Pradesh",
     "GJ" : "Gujarat",
@@ -111,6 +111,6 @@ export const StateToCode = {
     "UTTAR PRADESH" : "UP",
     "GUJARAT" : "GJ",
     "ANDHRA PRADESH" : "AP",
-    "KARNATAKA" : "KN",
+    "KARNATAKA" : "KA",
     "DELHI" : "DL"
 }
