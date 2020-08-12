@@ -1,0 +1,67 @@
+.tileContainer{
+    padding: 10px;
+}
+
+.tile {
+    height: 150px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.delta {
+    font-size: medium;
+}
+
+.tileContent {
+    font-size: xx-large;
+    margin: 20px;
+}
+
+.timeLabel {
+    text-align: right;
+    font-size: small;
+}
+
+.labelColor {
+    font-weight: bolder;
+    background-color: #dbc2f1;
+    color: #8a2be2;
+}
+
+.confirmed {
+    color: #f70404;
+}
+
+.bgFilledConfirmed {
+    background-color: #f8dce4;
+}
+
+.active {
+    color: #4179f1;
+}
+
+.bgFilledActive {
+    background-color: #e1e4fa;
+}
+
+.recovered {
+color: #10aa37;
+}
+
+.bgFilledRecovered {
+    background-color: #d6fad6;
+}
+
+.deceased {
+    color: #808080;
+}
+
+.bgFilledDeceased {
+    background-color: #e9e7e7;
+}
+
+
+
+

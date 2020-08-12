@@ -1,0 +1,33 @@
+.marginTop {
+    margin-top: 20px;
+}
+
+.confirmed {
+    color: rgb(247, 4, 4);
+}
+
+.active {
+    color: rgb(65, 121, 241);
+}
+
+.recovered {
+    color: rgb(16, 170, 55);
+}
+
+.deceased {
+    color: gray;
+}
+
+.sortIcon {
+    color: rgb(68, 67, 67);
+}
+
+
+td, th, tr {
+    border: 5px solid rgb(231, 230, 230);
+}
+
+th.confirmed:hover, th.active:hover, th.recovered:hover, th.deceased:hover {
+    cursor: pointer;
+    background-color: rgb(231, 230, 230);
+}

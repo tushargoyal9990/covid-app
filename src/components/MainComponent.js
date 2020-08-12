@@ -4,6 +4,7 @@ import {CodeToState} from '../assets/StateCodes'
 import Heading from './HeadingComponent';
 import CardSection from './CardSectionComponent';
 import TableSection from './TableSectionComponent';
+import Graph from './GraphComponent';
 
 class Main extends Component {
     render() {
@@ -13,6 +14,7 @@ class Main extends Component {
                     <Heading stateCode="INDIA"></Heading>
                     <CardSection stateCode="INDIA"></CardSection>
                     <TableSection stateCode="INDIA"></TableSection>
+                    <Graph stateCode="INDIA"></Graph>
                 </>
             );
         }

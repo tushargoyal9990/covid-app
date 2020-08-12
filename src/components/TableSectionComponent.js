@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Table} from 'reactstrap';
 import {URL_NATIONAL_DAILY, URL_DISTRICT_WISE} from '../assets/URL';
 import {CodeToState, CodeToStateNormal} from '../assets/StateCodes';
-import '../components-styles/TableSectionComponentStyle.css';
+import styles from '../components-styles/TableSection.module.css';
 import axios from 'axios';
 
 class TableSection extends Component {
@@ -112,22 +112,22 @@ class TableSection extends Component {
             );
         });
         return(
-            <div className="container margin-top">
-                <Table striped bordered hover responsive size="sm">
+            <div className={"container ".concat(`${styles.marginTop}`)}>
+                <Table responsive>
                     <thead>
                         <tr className="table-row">
                             <th>{this.props.stateCode === 'INDIA' ? "State/UT" : "District/Other"}</th>
-                            <th className="confirmed" onClick={() => this.toggleSort('isAscConfirmed')}>
-                                Confirmed <i className="fas fa-sort sort-icon"></i>
+                            <th className={styles.confirmed} onClick={() => this.toggleSort('isAscConfirmed')}>
+                                Confirmed <i className={"fas fa-sort ".concat(`${styles.sortIcon}`)}></i>
                             </th>
-                            <th className="active" onClick={() => this.toggleSort('isAscActive')}>
-                                Active <i className="fas fa-sort sort-icon"></i>
+                            <th className={styles.active} onClick={() => this.toggleSort('isAscActive')}>
+                                Active <i className={"fas fa-sort ".concat(`${styles.sortIcon}`)}></i>
                             </th>
-                            <th className="recovered" onClick={() => this.toggleSort('isAscRecovered')}>
-                                Recovered <i className="fas fa-sort sort-icon"></i>
+                            <th className={styles.recovered} onClick={() => this.toggleSort('isAscRecovered')}>
+                                Recovered <i className={"fas fa-sort ".concat(`${styles.sortIcon}`)}></i>
                             </th>
-                            <th className="deceased" onClick={() => this.toggleSort('isAscDeceased')}>
-                                Deceased <i className="fas fa-sort sort-icon"></i>
+                            <th className={styles.deceased} onClick={() => this.toggleSort('isAscDeceased')}>
+                                Deceased <i className={"fas fa-sort ".concat(`${styles.sortIcon}`)}></i>
                             </th>
                         </tr>
                     </thead>

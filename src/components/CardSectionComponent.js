@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../components-styles/CardSectionComponentStyle.css';
+import styles from '../components-styles/CardSection.module.css';
 import {URL_NATIONAL_DAILY} from '../assets/URL';
 import axios from 'axios';
 
@@ -87,45 +87,45 @@ class CardSection extends Component {
         return(
             <div className="container">
                 <div className="row">
-                    <div className="col-md-3 col-sm-6 tile-container">
-                        <div className={"tile confirmed ".concat(`${this.state.showConfirmed ? "bg-filled-confirmed" : ""}`)} onMouseEnter={this.toggleConfirmed} onMouseLeave={this.toggleConfirmed}>
+                    <div className={"col-md-3 col-sm-6 ".concat(`${styles.tileContainer}`)}>
+                        <div className={`${styles.tile} ${styles.confirmed} `.concat(`${this.state.showConfirmed ? `${styles.bgFilledConfirmed}` : ""}`)} onMouseEnter={this.toggleConfirmed} onMouseLeave={this.toggleConfirmed}>
                             CONFIRMED 
-                            <div className="tile-content">
-                                <div className="delta">+{this.state.deltaConfirmed}</div>
+                            <div className={styles.tileContent}>
+                                <div className={styles.delta}>+{this.state.deltaConfirmed}</div>
                                 {this.state.confirmed}
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-3 col-sm-6 tile-container">
-                        <div className={"tile active ".concat(`${this.state.showActive ? "bg-filled-active" : ""}`)} onMouseEnter={this.toggleActive} onMouseLeave={this.toggleActive}>
+                    <div className={"col-md-3 col-sm-6 ".concat(`${styles.tileContainer}`)}>
+                        <div className={`${styles.tile} ${styles.active} `.concat(`${this.state.showActive ? `${styles.bgFilledActive}` : ""}`)} onMouseEnter={this.toggleActive} onMouseLeave={this.toggleActive}>
                             ACTIVE 
-                            <div className="tile-content">
-                                <div className="delta">+{this.state.deltaActive}</div>
+                            <div className={styles.tileContent}>
+                                <div className={styles.delta}>+{this.state.deltaActive}</div>
                                 {this.state.active}
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-3 col-sm-6 tile-container">
-                        <div className={"tile recovered ".concat(`${this.state.showRecovered ? "bg-filled-recovered" : ""}`)} onMouseEnter={this.toggleRecovered} onMouseLeave={this.toggleRecovered}>
+                    <div className={"col-md-3 col-sm-6 ".concat(`${styles.tileContainer}`)}>
+                        <div className={`${styles.tile} ${styles.recovered} `.concat(`${this.state.showRecovered ? `${styles.bgFilledRecovered}` : ""}`)} onMouseEnter={this.toggleRecovered} onMouseLeave={this.toggleRecovered}>
                             RECOVERED 
-                            <div className="tile-content">
-                                <div className="delta">+{this.state.deltaRecovered}</div>
+                            <div className={styles.tileContent}>
+                                <div className={styles.delta}>+{this.state.deltaRecovered}</div>
                                 {this.state.recovered}
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-3 col-sm-6 tile-container">
-                        <div className={"tile deceased ".concat(`${this.state.showDeceased ? "bg-filled-deceased" : ""}`)} onMouseEnter={this.toggleDeceased} onMouseLeave={this.toggleDeceased}>
+                    <div className={"col-md-3 col-sm-6 ".concat(`${styles.tileContainer}`)}>
+                        <div className={`${styles.tile} ${styles.deceased} `.concat(`${this.state.showDeceased ? `${styles.bgFilledDeceased}` : ""}`)} onMouseEnter={this.toggleDeceased} onMouseLeave={this.toggleDeceased}>
                             DECEASED 
-                            <div className="tile-content">
-                                <div className="delta">+{this.state.deltaDeceased}</div>
+                            <div className={styles.tileContent}>
+                                <div className={styles.delta}>+{this.state.deltaDeceased}</div>
                                 {this.state.deceased}
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="time-label">
-                    <span className="label-color">&nbsp;<i className="fas fa-sync-alt"></i> Last Updated on {this.state.lastUpdated}&nbsp;</span>
+                <div className={styles.timeLabel}>
+                    <span className={styles.labelColor}>&nbsp;<i className="fas fa-sync-alt"></i> Last Updated on {this.state.lastUpdated}&nbsp;</span>
                 </div>
             </div>
         );
