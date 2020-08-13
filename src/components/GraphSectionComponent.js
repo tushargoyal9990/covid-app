@@ -5,7 +5,6 @@ import '../../node_modules/react-vis/dist/style.css';
 import styles from '../components-styles/GraphSection.module.css';
 import {FlexibleWidthXYPlot, LineMarkSeries, XAxis, YAxis} from 'react-vis';
 import {Button, ButtonGroup} from 'reactstrap';
-import Switch from "react-switch";
  
 class Graph extends Component{
     constructor(props) {
@@ -80,6 +79,7 @@ class GraphSection extends Component {
     }
 
     handleToggle() {
+        console.log(this.state.checked);
         this.setState({checked: !this.state.checked});
     }
 
@@ -194,24 +194,19 @@ class GraphSection extends Component {
         return(
             <div className="container">
                 <h3 className={styles.heading}>Spread Trends</h3><hr></hr>
-                <ButtonGroup>
-                    <Button color="info" onClick={()=>this.changeSelect(0)} active={this.state.selected === 0}>Beginning</Button>
-                    <Button color="info" onClick={()=>this.changeSelect(1)} active={this.state.selected === 1}>3 Months</Button>
-                    <Button color="info" onClick={()=>this.changeSelect(2)} active={this.state.selected === 2}>1 Month</Button>
-                    <Button color="info" onClick={()=>this.changeSelect(3)} active={this.state.selected === 3}>1 Week</Button>
-                </ButtonGroup>
-                <span className={styles.right}>
-                    <Switch 
-                    onChange={this.handleToggle} 
-                    checked={this.state.checked} 
-                    offColor="#4179f1" 
-                    onColor="#10aa37"
-                    checkedIcon={null}
-                    uncheckedIcon={null}/>
-                </span>
-                <span className={`${styles.right} ${styles.label}`}>
-                    {this.state.checked ? 'Cumulative' : 'Daily'}
-                </span>
+                <div className="row">
+                    <div className="col col-xs-6">
+                        <ButtonGroup>
+                            <Button color="dark" onClick={()=>this.changeSelect(0)} active={this.state.selected === 0}>Beginning</Button>
+                            <Button color="dark" onClick={()=>this.changeSelect(1)} active={this.state.selected === 1}>3 Months</Button>
+                            <Button color="dark" onClick={()=>this.changeSelect(2)} active={this.state.selected === 2}>1 Month</Button>
+                            <Button color="dark" onClick={()=>this.changeSelect(3)} active={this.state.selected === 3}>1 Week</Button>
+                        </ButtonGroup>
+                    </div>
+                    <div className="col col-xs-6">
+                        <Button className={styles.right} color="dark" onClick={()=>this.handleToggle()}>{this.state.checked ? 'Cumulative' : 'Daily'}</Button>
+                    </div>
+                </div>
                 <div className="row">
                     <div className={`'col col-md-6 ' ${styles.outer}`}>
                         <div className={`${styles.bgFilledConfirmed}`}>
