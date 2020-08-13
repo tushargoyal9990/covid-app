@@ -5,6 +5,7 @@ import Heading from './HeadingComponent';
 import CardSection from './CardSectionComponent';
 import TableSection from './TableSectionComponent';
 import GraphSection from './GraphSectionComponent';
+import TestingSection from './TestingSectionComponent';
 
 class Main extends Component {
     render() {
@@ -15,6 +16,7 @@ class Main extends Component {
                     <CardSection stateCode="INDIA"></CardSection>
                     <TableSection stateCode="INDIA"></TableSection>
                     <GraphSection stateCode="INDIA"></GraphSection>
+                    <TestingSection stateCode="INDIA"></TestingSection>
                 </>
             );
         }
@@ -30,6 +32,7 @@ class Main extends Component {
                     <CardSection stateCode={props.match.params.stateCode}></CardSection>
                     <TableSection stateCode={props.match.params.stateCode}></TableSection>
                     <GraphSection stateCode={props.match.params.stateCode}></GraphSection>
+                    <TestingSection stateCode={props.match.params.stateCode}></TestingSection>
                 </>
             );
         }

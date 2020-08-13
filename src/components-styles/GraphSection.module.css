@@ -4,7 +4,6 @@
 
 .bgFilledConfirmed {
     background-color: #f8dce4;
-    border: 3px solid #f70404;
 }
 
 .active {
@@ -13,7 +12,6 @@
 
 .bgFilledActive {
     background-color: #e1e4fa;
-    border: 3px solid #4179f1;
 }
 
 .recovered {
@@ -22,7 +20,6 @@
 
 .bgFilledRecovered {
     background-color: #d6fad6;
-    border: 3px solid #10aa37;
 }
 
 .deceased {
@@ -31,7 +28,6 @@
 
 .bgFilledDeceased {
     background-color: #e9e7e7;
-    border: 3px solid #808080;
 }
 
 .textStyle {

@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import styles from '../components-styles/CardSection.module.css';
 import {URL_NATIONAL_DAILY} from '../assets/URL';
 import axios from 'axios';
+import {population, populationShort} from '../assets/StatePopulation';
+import { Tooltip } from 'reactstrap';
 
 class CardSection extends Component {
     constructor(props) {
@@ -15,8 +17,32 @@ class CardSection extends Component {
             deltaRecovered: 0,
             deceased: 0,
             deltaDeceased: 0,
-            lastUpdated: ''
+            lastUpdated: '',
+            confirmedTT: false,
+            activeTT: false,
+            recoveredTT: false,
+            deceasedTT: false,
         };
+        this.toggleConfirmedTT = this.toggleConfirmedTT.bind(this);
+        this.toggleActiveTT = this.toggleActiveTT.bind(this);
+        this.toggleRecoveredTT = this.toggleRecoveredTT.bind(this);
+        this.toggleDeceasedTT = this.toggleDeceasedTT.bind(this);
+    }
+
+    toggleConfirmedTT() {
+        this.setState({confirmedTT: !this.state.confirmedTT});
+    }
+
+    toggleActiveTT() {
+        this.setState({activeTT: !this.state.activeTT});
+    }
+
+    toggleRecoveredTT() {
+        this.setState({recoveredTT: !this.state.recoveredTT});
+    }
+
+    toggleDeceasedTT() {
+        this.setState({deceasedTT: !this.state.deceasedTT});
     }
 
     componentDidMount() {
@@ -62,7 +88,8 @@ class CardSection extends Component {
                 <div className="row">
                     <div className={"col-md-3 col-sm-6 ".concat(`${styles.tileContainer}`)}>
                         <div className={`${styles.tile} ${styles.confirmed}`}>
-                            CONFIRMED 
+                            CONFIRMED <span id="confirmedTT" className={`${styles.icon} ${styles.ConfirmedIcon}`}>&nbsp;&nbsp;i&nbsp;&nbsp;</span>
+                            <Tooltip isOpen={this.state.confirmedTT} target="confirmedTT" toggle={this.toggleConfirmedTT}>Per Million : {Math.floor((this.state.confirmed*1000000)/population[this.props.stateCode.slice(0,2)])}</Tooltip>
                             <div className={styles.tileContent}>
                                 <div className={styles.delta}>+{this.state.deltaConfirmed}</div>
                                 {this.state.confirmed}
@@ -71,7 +98,8 @@ class CardSection extends Component {
                     </div>
                     <div className={"col-md-3 col-sm-6 ".concat(`${styles.tileContainer}`)}>
                         <div className={`${styles.tile} ${styles.active}`}>
-                            ACTIVE 
+                            ACTIVE <span id="activeTT" className={`${styles.icon} ${styles.ActiveIcon}`}>&nbsp;&nbsp;i&nbsp;&nbsp;</span>
+                            <Tooltip isOpen={this.state.activeTT} target="activeTT" toggle={this.toggleActiveTT}>Per Million : {Math.floor((this.state.active*1000000)/population[this.props.stateCode.slice(0,2)])}<br></br>Active Ratio: {((this.state.active*100)/this.state.confirmed).toFixed(2)}%</Tooltip>
                             <div className={styles.tileContent}>
                                 <div className={styles.delta}>+{this.state.deltaActive}</div>
                                 {this.state.active}
@@ -80,7 +108,8 @@ class CardSection extends Component {
                     </div>
                     <div className={"col-md-3 col-sm-6 ".concat(`${styles.tileContainer}`)}>
                         <div className={`${styles.tile} ${styles.recovered}`}>
-                            RECOVERED 
+                            RECOVERED <span id="recoveredTT" className={`${styles.icon} ${styles.RecoveredIcon}`}>&nbsp;&nbsp;i&nbsp;&nbsp;</span>
+                            <Tooltip isOpen={this.state.recoveredTT} target="recoveredTT" toggle={this.toggleRecoveredTT}>Per Million : {Math.floor((this.state.recovered*1000000)/population[this.props.stateCode.slice(0,2)])}<br></br>Recovery Ratio: {((this.state.recovered*100)/this.state.confirmed).toFixed(2)}%</Tooltip>
                             <div className={styles.tileContent}>
                                 <div className={styles.delta}>+{this.state.deltaRecovered}</div>
                                 {this.state.recovered}
@@ -89,7 +118,8 @@ class CardSection extends Component {
                     </div>
                     <div className={"col-md-3 col-sm-6 ".concat(`${styles.tileContainer}`)}>
                         <div className={`${styles.tile} ${styles.deceased}`}>
-                            DECEASED 
+                            DECEASED <span id="deceasedTT" className={`${styles.icon} ${styles.DeceasedIcon}`}>&nbsp;&nbsp;i&nbsp;&nbsp;</span>
+                            <Tooltip isOpen={this.state.deceasedTT} target="deceasedTT" toggle={this.toggleDeceasedTT}>Per Million : {Math.floor((this.state.deceased*1000000)/population[this.props.stateCode.slice(0,2)])}<br></br>Fatality Ratio: {((this.state.deceased*100)/this.state.confirmed).toFixed(2)}%</Tooltip>
                             <div className={styles.tileContent}>
                                 <div className={styles.delta}>+{this.state.deltaDeceased}</div>
                                 {this.state.deceased}
@@ -97,8 +127,9 @@ class CardSection extends Component {
                         </div>
                     </div>
                 </div>
-                <div className={styles.timeLabel}>
-                    <span className={styles.labelColor}>&nbsp;<i className="fas fa-sync-alt"></i> Last Updated on {this.state.lastUpdated}&nbsp;</span>
+                <div className={styles.label}>
+                    <span className={styles.populationLabel}>&nbsp;Population: {populationShort[this.props.stateCode.slice(0,2)]}&nbsp;</span>
+                    <span className={styles.timeLabel}>&nbsp;<i className="fas fa-sync-alt"></i> Last Updated on {this.state.lastUpdated}&nbsp;</span>
                 </div>
             </div>
         );

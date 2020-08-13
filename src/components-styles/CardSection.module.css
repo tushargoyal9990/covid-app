@@ -19,22 +19,28 @@
     margin: 20px;
 }
 
-.timeLabel {
-    text-align: right;
+.label {
     font-size: small;
+    font-weight: bolder;
+    margin-top: 15px;
 }
 
-.labelColor {
-    font-weight: bolder;
+.timeLabel {
+    float: right;
     background-color: #dbc2f1;
     color: #8a2be2;
+}
+
+.populationLabel {
+    background-color: #e7e7e7;
+    color: #808080;
 }
 
 .confirmed {
     color: #f70404;
 }
 
-.tile.confirmed:hover {
+.tile.confirmed {
     background-color: #f8dce4;
 }
 
@@ -42,7 +48,7 @@
     color: #4179f1;
 }
 
-.tile.active:hover {
+.tile.active {
     background-color: #e1e4fa;
 }
 
@@ -50,7 +56,7 @@
     color: #10aa37;
 }
 
-.tile.recovered:hover {
+.tile.recovered {
     background-color: #d6fad6;
 }
 
@@ -58,10 +64,30 @@
     color: #808080;
 }
 
-.tile.deceased:hover {
+.tile.deceased {
     background-color: #e9e7e7;
 }
 
+.icon {
+    /* float: right; */
+    cursor: pointer;
+    border-radius: 50%;
+    opacity: 50%;
+}
 
+.ConfirmedIcon {
+    border: 1px solid #f70404;
+}
 
+.ActiveIcon {
+    border: 1px solid #4179f1;
+}
+
+.RecoveredIcon {
+    border: 1px solid #10aa37;
+}
+
+.DeceasedIcon {
+    border: 1px solid #808080;
+}
 
