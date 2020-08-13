@@ -3,7 +3,7 @@ import axios from 'axios';
 import { URL_NATIONAL_DAILY, URL_STATES_DAILY } from '../assets/URL';
 import '../../node_modules/react-vis/dist/style.css';
 import styles from '../components-styles/GraphSection.module.css';
-import {FlexibleWidthXYPlot, LineMarkSeries, XAxis, YAxis} from 'react-vis';
+import {FlexibleWidthXYPlot, LineMarkSeries, XAxis, YAxis, Crosshair} from 'react-vis';
 import {Button, ButtonGroup} from 'reactstrap';
  
 class Graph extends Component{
@@ -46,6 +46,7 @@ class Graph extends Component{
                             this.props.changeHover(value);
                         }
                     }/>
+                {(this.state.hoverValue) && (<Crosshair values={[this.state.hoverValue]}><div></div></Crosshair>)}
             </FlexibleWidthXYPlot>  
         );
     }
