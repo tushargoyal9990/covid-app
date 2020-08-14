@@ -65,7 +65,7 @@ class TestingSection extends Component {
         const deno = this.props.stateCode === 'INDIA' ? population["IN"] : population[this.props.stateCode];
         return(
             <div className='container'>
-                <h3 className={styles.heading}>Testing Info.</h3><hr></hr>
+                <h3 className={styles.heading}>Testing Info.  <i className="fas fa-microscope"></i></h3><hr></hr>
                 <div className="row">
                     <div className='col-md-4 col-sm-12'>
                         <div className={styles.tile}>

@@ -80,7 +80,6 @@ class GraphSection extends Component {
     }
 
     handleToggle() {
-        console.log(this.state.checked);
         this.setState({checked: !this.state.checked});
     }
 
@@ -194,7 +193,7 @@ class GraphSection extends Component {
     render() {
         return(
             <div className="container">
-                <h3 className={styles.heading}>Spread Trends</h3><hr></hr>
+                <h3 className={styles.heading}>Spread Trends  <i className="fas fa-chart-line"></i></h3><hr></hr>
                 <div className="row">
                     <div className="col col-xs-6">
                         <ButtonGroup>

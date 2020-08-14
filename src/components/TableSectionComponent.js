@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {Table} from 'reactstrap';
 import {URL_NATIONAL_DAILY, URL_DISTRICT_WISE} from '../assets/URL';
-import {CodeToState, CodeToStateNormal} from '../assets/StateCodes';
+import {CodeToState, CodeToStateNormal, StateToCode} from '../assets/StateCodes';
 import styles from '../components-styles/TableSection.module.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class TableSection extends Component {
     constructor(props) {
@@ -99,9 +100,10 @@ class TableSection extends Component {
         const rows = this.state.rows.map((rowValue, rowIndex) => {
             const rowContent = rowValue.map((entryValue, entryIndex) => {
                 const rowCell = entryValue; 
+                const rowIndex = entryIndex;
                 return(
                     <td key={entryIndex}>
-                        {rowCell}
+                        {rowCell} {rowIndex === 0 && this.props.stateCode === 'INDIA' ? (<Link to={`${StateToCode[rowCell.toUpperCase()]}`}><i className='fas fa-external-link-alt'></i></Link>) : ''}
                     </td>
                 );
             });

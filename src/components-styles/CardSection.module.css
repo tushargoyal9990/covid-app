@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
 .tileContainer{
     padding: 10px;
 }
@@ -5,9 +7,9 @@
 .tile {
     height: 150px;
     text-align: center;
-    font-weight: bold;
     border-radius: 10px;
     padding: 10px;
+    font-family: 'Fredoka One', cursive;
 }
 
 .delta {
@@ -16,7 +18,7 @@
 
 .tileContent {
     font-size: xx-large;
-    margin: 20px;
+    margin-top: 20px;
 }
 
 .label {
@@ -68,26 +70,6 @@
     background-color: #e9e7e7;
 }
 
-.icon {
-    /* float: right; */
-    cursor: pointer;
-    border-radius: 50%;
+.icon:hover {
     opacity: 50%;
 }
-
-.ConfirmedIcon {
-    border: 1px solid #f70404;
-}
-
-.ActiveIcon {
-    border: 1px solid #4179f1;
-}
-
-.RecoveredIcon {
-    border: 1px solid #10aa37;
-}
-
-.DeceasedIcon {
-    border: 1px solid #808080;
-}
-

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
 .confirmed {
     color: #f70404;
 }
@@ -45,7 +47,7 @@
 .heading {
     margin-top: 20px;
     color: #646262;
-    font-family: cursive;
+    font-family: 'Secular One', sans-serif;
 }
 
 .right{

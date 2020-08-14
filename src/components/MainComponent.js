@@ -6,6 +6,7 @@ import CardSection from './CardSectionComponent';
 import TableSection from './TableSectionComponent';
 import GraphSection from './GraphSectionComponent';
 import TestingSection from './TestingSectionComponent';
+import IconsSection from './IconsSectionComponent';
 
 class Main extends Component {
     render() {
@@ -37,11 +38,14 @@ class Main extends Component {
             );
         }
         return(
+            <>
             <Switch>
                 <Route exact path="/" component={NationalPage}></Route>
                 <Route exact path="/:stateCode" component={StatePage}></Route>
                 <Redirect to="/"></Redirect>
             </Switch>
+            <IconsSection></IconsSection>
+            </>
         );
     }
 };

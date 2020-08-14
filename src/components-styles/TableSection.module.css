@@ -19,9 +19,9 @@
 }
 
 .sortIcon {
+    cursor: pointer;
     color: rgb(68, 67, 67);
 }
-
 
 td, th, tr {
     border: 5px solid rgb(231, 230, 230);
