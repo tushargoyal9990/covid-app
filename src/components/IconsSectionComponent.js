@@ -20,9 +20,9 @@ class IconsSection extends Component {
             </div>
             <div className={`${styles.footerContainer}`}> 
                 <div className={`${styles.socialMedia}`}>
-                    <a className={styles.icon} href="https://github.com/tushargoyal9990"><i class="fab fa-github"></i></a>
-                    <a className={styles.icon} href="https://www.linkedin.com/in/tushar-goyal-445411184/"><i class="fab fa-linkedin"></i></a>
-                    <a className={styles.icon} href="mailto:tushargoyal9990@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a className={styles.icon} href="https://github.com/tushargoyal9990"><i className="fab fa-github"></i></a>
+                    <a className={styles.icon} href="https://www.linkedin.com/in/tushar-goyal-445411184/"><i className="fab fa-linkedin"></i></a>
+                    <a className={styles.icon} href="mailto:tushargoyal9990@gmail.com"><i className="fas fa-envelope"></i></a>
                 </div>
                 Created with <i className={"fas fa-heart ".concat(`${styles.heart}`)}></i> by Tushar Goyal
             </div>
