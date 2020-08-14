@@ -40,9 +40,9 @@ class Main extends Component {
         return(
             <>
             <Switch>
-                <Route exact path="/" component={NationalPage}></Route>
-                <Route exact path="/:stateCode" component={StatePage}></Route>
-                <Redirect to="/"></Redirect>
+                <Route exact path={process.env.PUBLIC_URL + '/'} component={NationalPage}></Route>
+                <Route exact path={process.env.PUBLIC_URL + "/:stateCode"} component={StatePage}></Route>
+                <Redirect to={process.env.PUBLIC_URL + '/'}></Redirect>
             </Switch>
             <IconsSection></IconsSection>
             </>
